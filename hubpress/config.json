@@ -4,7 +4,14 @@
     "repositoryName": "blog",
     "branch": "gh-pages"
   },
+  "site": {
+    "title": "Jax's blog",
+    "description": "A journey in The Art of Technomancy.",
+    "cover": "https://jsiu22.github.io//img/intro-bg.jpg",
+    "disqus": "jax-blog"
+  },
+  "socialnetwork": {},
   "theme": {
-    "name": "Casper"
+    "name": "casper"
   }
 }
