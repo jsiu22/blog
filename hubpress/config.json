@@ -10,7 +10,10 @@
     "cover": "https://jsiu22.github.io//img/intro-bg.jpg",
     "disqus": "jax-blog"
   },
-  "socialnetwork": {},
+  "socialnetwork": {
+    "email": "",
+    "github": "JSIU22"
+  },
   "theme": {
     "name": "casper"
   }
