@@ -1,0 +1,22 @@
+= Linux Heredoc
+:hp-tags: Linux, Bash, CLI
+
+Very handy tool, personally I like to use it to quickly make scripts, or populate files. 
+
+[source,bash]
+----
+cat << EOF > /tmp/yourfilehere
+These contents will be written to the file.
+        This line is indented.
+EOF
+____
+
+You can also use the tee command to the same effect.
+
+[source,bash]
+----
+tee /tmp/yourfilehere << EOF
+These contents will be written to the file.
+        This line is indented.
+EOF
+____
