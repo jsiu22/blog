@@ -1,29 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jax's blog]]></title><description><![CDATA[A journey in The Art of Technomancy.]]></description><link>https://jsiu22.github.io/blog</link><image><url>https://jsiu22.github.io//img/intro-bg.jpg</url><title>Jax&apos;s blog</title><link>https://jsiu22.github.io/blog</link></image><generator>RSS for Node</generator><lastBuildDate>Tue, 28 Feb 2017 15:59:01 GMT</lastBuildDate><atom:link href="https://jsiu22.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Linux Heredoc]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jax's blog]]></title><description><![CDATA[A journey in The Art of Technomancy.]]></description><link>https://jsiu22.github.io/blog</link><image><url>https://jsiu22.github.io//img/intro-bg.jpg</url><title>Jax&apos;s blog</title><link>https://jsiu22.github.io/blog</link></image><generator>RSS for Node</generator><lastBuildDate>Tue, 28 Feb 2017 16:05:20 GMT</lastBuildDate><atom:link href="https://jsiu22.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Linux Heredoc]]></title><description><![CDATA[<div class="paragraph">
 <p>Very handy tool, personally I like to use it to quickly make scripts, or populate files.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">cat &lt;&lt; EOF &gt; /tmp/yourfilehere
+<pre class="highlightjs highlight"><code class="language-bash" data-lang="bash">cat &lt;&lt; EOF &gt; /tmp/yourfilehere
 These contents will be written to the file.
         This line is indented.
-EOF
-____
-
-You can also use the tee command to the same effect.
-
-[source,bash]</code></pre>
+EOF</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>tee /tmp/yourfilehere &lt;&lt; EOF
+<p>You can also use the tee command to the same effect.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash" data-lang="bash">tee /tmp/yourfilehere &lt;&lt; EOF
 These contents will be written to the file.
         This line is indented.
-EOF</p>
+EOF</code></pre>
 </div>
-<div class="quoteblock">
-<blockquote>
-
-</blockquote>
 </div>]]></description><link>https://jsiu22.github.io/blog/2017/02/28/Linux-Heredoc.html</link><guid isPermaLink="true">https://jsiu22.github.io/blog/2017/02/28/Linux-Heredoc.html</guid><category><![CDATA[Linux]]></category><category><![CDATA[ Bash]]></category><category><![CDATA[ CLI]]></category><dc:creator><![CDATA[Jax]]></dc:creator><pubDate>Tue, 28 Feb 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Eclipse: Unable to acquire the state change lock for the module]]></title><description><![CDATA[<div class="paragraph">
 <p>If you get the error: org.osgi.framework.BundleException: Unable to acquire the state change lock for the module: osgi.identity</p>
 </div>
