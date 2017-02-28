@@ -1,0 +1,7 @@
+= Eclipse: Unable to acquire the state change lock for the module
+:hp-tags: Eclipse, Error
+
+If you get the error: org.osgi.framework.BundleException: Unable to acquire the state change lock for the module: osgi.identity
+
+That means you probably exited eclipse abruptly. 
+To fix this, go to your workspace's .metadata (C:\Users\USERNAME\workspace\.metadata) and delete the .lock file.
