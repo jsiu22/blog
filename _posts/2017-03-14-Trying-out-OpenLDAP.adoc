@@ -2,7 +2,7 @@
 // See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
 // :hp-image: /covers/cover.png
 // :published_at: 2019-01-31
-:hp-tags: OpenSource, Linux
+:hp-tags: Open-source, Linux
 // :hp-alt-title: My English Title
 
 This post's going to document my attempt with OpenLDAP.
