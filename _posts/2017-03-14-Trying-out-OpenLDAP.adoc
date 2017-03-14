@@ -17,6 +17,37 @@ Configuring OpenLDAP 2.4.44-Release
 configure: error: BDB/HDB: BerkeleyDB not available
 ....
 
-Not a big problem, but then I realized I could just grab packaged copy.
+Not a big problem.
+
+`1.` But then I realized I could just grab packaged copy.
 ....
-1. sudo yum -y install openldap openldap-clients openldap-servers
+[root]# yum -y install openldap openldap-clients openldap-servers
+....
+
+`2.` Then I generated a password hash.
+....
+[root]# slappasswd
+New password : test
+Re-enter new password : test
+{SSHA}3lPFVw18zeh8LT54hQH88znzj8TuBrLv
+....
+
+`3.` You need to place the this hash into a OpenLDAP configuration file: `olcDatabase={2}bdb.ldif`
+....
+[root]# cd /etc/openldap/slapd.d/cn\=config
+[root]# nano olcDatabase\=\{2\}bdb.ldif
+...
+olcRootPW: {SSHA}3lPFVw18zeh8LT54hQH88znzj8TuBrLv
+....
+
+At this point I noticed that on my installation I didn't have the olcDatabase={2}bdb.ldif file. Instead I have olcDatabase={2}mdb.ldif
+
+`4.` 
+....
+
+....
+
+`5.` 
+....
+
+....
