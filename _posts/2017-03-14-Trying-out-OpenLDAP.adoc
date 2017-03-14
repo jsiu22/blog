@@ -1,0 +1,22 @@
+= Trying out OpenLDAP
+// See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
+// :hp-image: /covers/cover.png
+// :published_at: 2019-01-31
+:hp-tags: OpenSource, Linux
+// :hp-alt-title: My English Title
+
+This post's going to document my attempt with OpenLDAP.
+
+I first started by getting code directly from http://www.openldap.org/software/download/[OpenLDAP].
+
+It unpacked fine but when I tried to run `./configure`.
+....
+Configuring OpenLDAP 2.4.44-Release
+...
+
+configure: error: BDB/HDB: BerkeleyDB not available
+....
+
+Not a big problem, but then I realized I could just grab packaged copy.
+....
+1. sudo yum -y install openldap openldap-clients openldap-servers
