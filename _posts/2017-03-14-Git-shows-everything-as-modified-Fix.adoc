@@ -1,0 +1,26 @@
+= Git shows everything as modified. Fix
+// See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
+// :hp-image: /covers/cover.png
+// :published_at: 2019-01-31
+:hp-tags: Git, Linux, Windows, IDE, Error, Fix
+// :hp-alt-title: My English Title
+
+If your repository and development machines use different OS and git or your IDE shows everything as modified. You probably have a line ending issue.
+
+Simply type the following command in your Git repository.
+
+....
+git config core.autocrlf false
+....
+
+Alternately you can edit your Git repo's config file.
+
+....
+nano .git/config
+...
+[core]
+...
+autocrlf = false
+....
+
+The next time you pull it should work normally.
