@@ -1,0 +1,28 @@
+= Installing Tomcat 7 on RHEL 6
+// See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
+// :hp-image: /covers/cover.png
+// :published_at: 2019-01-31
+:hp-tags: Linux, Install, RHEL6
+// :hp-alt-title: My English Title
+
+`1.` First make sure Java 7 or higher is installed.
+....
+java -version
+....
+
+`2.` Create tomcat user and group.
+....
+sudo groupadd tomcat
+sudo mkdir /opt/tomcat
+sudo useradd -s /sbin/nologin -g tomcat -d /opt/tomcat tomcat
+....
+
+`1.` First make sure Java 7 or higher is installed.
+....
+
+....
+
+`1.` First make sure Java 7 or higher is installed.
+....
+
+....
