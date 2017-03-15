@@ -1,0 +1,26 @@
+= What init system am I using Something test?
+// See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
+// :hp-image: /covers/cover.png
+// :published_at: 2019-01-31
+:hp-tags: Linux, BASH, CLI
+// :hp-alt-title: My English Title
+
+I had a bit of trouble finding the init system used for a Linux box I was using. Since the init process is always assigned PID 1, you can use the proc virtual file system to access the init used. 
+
+....
+sudo /proc/1/exe --version
+....
+
+The output should be something like this:
+
+....
+exe (upstart 0.6.5)
+...
+....
+
+or this:
+
+....
+systemd 231
+...
+....
