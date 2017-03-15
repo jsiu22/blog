@@ -5,7 +5,7 @@
 :hp-tags: Linux, BASH, CLI
 // :hp-alt-title: My English Title
 
-I had a bit of trouble finding the Init system used for a Linux box I was using. Since the init process is always assigned PID 1, you can use the proc virtual file system to access the init used. 
+I had a bit of trouble finding the init system used for a Linux box I was using. Since the init process is always assigned PID 1, you can use the proc virtual file system to access the init used. 
 
 ....
 sudo /proc/1/exe --version
