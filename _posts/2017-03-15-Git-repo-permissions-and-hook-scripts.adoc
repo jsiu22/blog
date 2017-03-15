@@ -1,0 +1,13 @@
+= Git repo permissions and hook scripts
+// See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
+// :hp-image: /covers/cover.png
+// :published_at: 2019-01-31
+:hp-tags: Git, Development, Bash, CLI
+// :hp-alt-title: My English Title
+
+I had pretty frustrating time with my Git repo. Having setup a git group and adding the appropriate users, I found myself still having trouble when multiple people push to the repo.
+
+Turns out Git doesn't keep file metadata (including permissions and ownership). 
+
+How do you solve this issue? Git provides a hooks directory (.git/hooks) where you can plop down scripts that fire on repo events. Here you can change the appropriate files back to their original permissions. 
+
