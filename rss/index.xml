@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jax's blog]]></title><description><![CDATA[A journey in The Art of Technomancy.]]></description><link>https://jsiu22.github.io/blog</link><image><url>https://jsiu22.github.io//img/intro-bg.jpg</url><title>Jax&apos;s blog</title><link>https://jsiu22.github.io/blog</link></image><generator>RSS for Node</generator><lastBuildDate>Wed, 15 Mar 2017 19:21:22 GMT</lastBuildDate><atom:link href="https://jsiu22.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[What init system am I using Something test?]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jax's blog]]></title><description><![CDATA[A journey in The Art of Technomancy.]]></description><link>https://jsiu22.github.io/blog</link><image><url>https://jsiu22.github.io//img/intro-bg.jpg</url><title>Jax&apos;s blog</title><link>https://jsiu22.github.io/blog</link></image><generator>RSS for Node</generator><lastBuildDate>Wed, 15 Mar 2017 19:45:06 GMT</lastBuildDate><atom:link href="https://jsiu22.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[What init system am I using Something test?]]></title><description><![CDATA[<div class="paragraph">
 <p>I had a bit of trouble finding the init system used for a Linux box I was using. Since the init process is always assigned PID 1, you can use the proc virtual file system to access the init used.</p>
 </div>
 <div class="literalblock">
@@ -23,7 +23,17 @@
 <pre>systemd 231
 ...</pre>
 </div>
-</div>]]></description><link>https://jsiu22.github.io/blog/2017/03/15/What-init-system-am-I-using-Something-test.html</link><guid isPermaLink="true">https://jsiu22.github.io/blog/2017/03/15/What-init-system-am-I-using-Something-test.html</guid><category><![CDATA[Linux]]></category><category><![CDATA[ Bash]]></category><category><![CDATA[ CLI]]></category><dc:creator><![CDATA[Jax]]></dc:creator><pubDate>Wed, 15 Mar 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Git shows everything as modified. Fix]]></title><description><![CDATA[<div class="paragraph">
+</div>]]></description><link>https://jsiu22.github.io/blog/2017/03/15/What-init-system-am-I-using-Something-test.html</link><guid isPermaLink="true">https://jsiu22.github.io/blog/2017/03/15/What-init-system-am-I-using-Something-test.html</guid><category><![CDATA[Linux]]></category><category><![CDATA[ Bash]]></category><category><![CDATA[ CLI]]></category><dc:creator><![CDATA[Jax]]></dc:creator><pubDate>Wed, 15 Mar 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[EGit showing 'Nothing to fetch']]></title><description><![CDATA[<div class="paragraph">
+<p>If you&#8217;re using EGit and its showing 'Nothing to fetch' but you&#8217;re sure your remote has updates. Try adding the following to your <code>.git/config</code> file under <code>[remote "remote_name"]</code>.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>fetch = +refs/heads/*:refs/remotes/origin/*</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This makes Git fetch all refs from your remote server starting at <code>refs/heads/</code> and store them under <code>refs/remotes/origin/</code> locally. It does so with all branches.</p>
+</div>]]></description><link>https://jsiu22.github.io/blog/2017/03/15/E-Gt-showing-Nothing-to-fetch.html</link><guid isPermaLink="true">https://jsiu22.github.io/blog/2017/03/15/E-Gt-showing-Nothing-to-fetch.html</guid><category><![CDATA[Git]]></category><category><![CDATA[ Eclipse]]></category><category><![CDATA[ IDE]]></category><category><![CDATA[ Development]]></category><dc:creator><![CDATA[Jax]]></dc:creator><pubDate>Wed, 15 Mar 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Git shows everything as modified. Fix]]></title><description><![CDATA[<div class="paragraph">
 <p>If your repository and development machines use different OS and git or your IDE shows everything as modified. You probably have a line ending issue.</p>
 </div>
 <div class="paragraph">
