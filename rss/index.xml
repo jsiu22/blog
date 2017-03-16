@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jax's blog]]></title><description><![CDATA[A journey in The Art of Technomancy.]]></description><link>https://jsiu22.github.io/blog</link><image><url>https://jsiu22.github.io//img/intro-bg.jpg</url><title>Jax&apos;s blog</title><link>https://jsiu22.github.io/blog</link></image><generator>RSS for Node</generator><lastBuildDate>Wed, 15 Mar 2017 21:24:18 GMT</lastBuildDate><atom:link href="https://jsiu22.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[What init system am I using Something test?]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jax's blog]]></title><description><![CDATA[A journey in The Art of Technomancy.]]></description><link>https://jsiu22.github.io/blog</link><image><url>https://jsiu22.github.io//img/intro-bg.jpg</url><title>Jax&apos;s blog</title><link>https://jsiu22.github.io/blog</link></image><generator>RSS for Node</generator><lastBuildDate>Thu, 16 Mar 2017 14:00:31 GMT</lastBuildDate><atom:link href="https://jsiu22.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[What init system am I using?]]></title><description><![CDATA[<div class="paragraph">
 <p>I had a bit of trouble finding the init system used for a Linux box I was using. Since the init process is always assigned PID 1, you can use the proc virtual file system to access the init used.</p>
 </div>
 <div class="literalblock">
@@ -23,25 +23,7 @@
 <pre>systemd 231
 ...</pre>
 </div>
-</div>]]></description><link>https://jsiu22.github.io/blog/2017/03/15/What-init-system-am-I-using-Something-test.html</link><guid isPermaLink="true">https://jsiu22.github.io/blog/2017/03/15/What-init-system-am-I-using-Something-test.html</guid><category><![CDATA[Linux]]></category><category><![CDATA[ Bash]]></category><category><![CDATA[ CLI]]></category><dc:creator><![CDATA[Jax]]></dc:creator><pubDate>Wed, 15 Mar 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Git repo permissions and hook scripts]]></title><description><![CDATA[<div class="paragraph">
-<p>I had pretty frustrating time with my Git repo. Having setup a git group and adding the appropriate users, I found myself still having trouble when multiple people push to the repo.</p>
-</div>
-<div class="paragraph">
-<p>Turns out Git doesn&#8217;t keep file metadata (including permissions and ownership).</p>
-</div>
-<div class="paragraph">
-<p>How do you solve this issue? Git provides a hooks directory (.git/hooks) where you can plop down scripts that fire on repo events. Here you can change the appropriate files back to their original permissions.</p>
-</div>]]></description><link>https://jsiu22.github.io/blog/2017/03/15/Git-repo-permissions-and-hook-scripts.html</link><guid isPermaLink="true">https://jsiu22.github.io/blog/2017/03/15/Git-repo-permissions-and-hook-scripts.html</guid><category><![CDATA[Git]]></category><category><![CDATA[ Development]]></category><category><![CDATA[ Bash]]></category><category><![CDATA[ CLI]]></category><dc:creator><![CDATA[Jax]]></dc:creator><pubDate>Wed, 15 Mar 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[EGit showing 'Nothing to fetch']]></title><description><![CDATA[<div class="paragraph">
-<p>If you&#8217;re using EGit and its showing 'Nothing to fetch' but you&#8217;re sure your remote has updates. Try adding the following to your <code>.git/config</code> file under <code>[remote "remote_name"]</code>.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>fetch = +refs/heads/*:refs/remotes/origin/*</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>This makes Git fetch all refs from your remote server starting at <code>refs/heads/</code> and store them under <code>refs/remotes/origin/</code> locally. It does so with all branches.</p>
-</div>]]></description><link>https://jsiu22.github.io/blog/2017/03/15/E-Gt-showing-Nothing-to-fetch.html</link><guid isPermaLink="true">https://jsiu22.github.io/blog/2017/03/15/E-Gt-showing-Nothing-to-fetch.html</guid><category><![CDATA[Git]]></category><category><![CDATA[ Eclipse]]></category><category><![CDATA[ IDE]]></category><category><![CDATA[ Development]]></category><category><![CDATA[ Fix]]></category><category><![CDATA[ Error]]></category><dc:creator><![CDATA[Jax]]></dc:creator><pubDate>Wed, 15 Mar 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Git shows everything as modified]]></title><description><![CDATA[<div class="paragraph">
+</div>]]></description><link>https://jsiu22.github.io/blog/2017/03/16/What-init-system-am-I-using.html</link><guid isPermaLink="true">https://jsiu22.github.io/blog/2017/03/16/What-init-system-am-I-using.html</guid><category><![CDATA[Linux]]></category><category><![CDATA[ Bash]]></category><category><![CDATA[ CLI]]></category><dc:creator><![CDATA[Jax]]></dc:creator><pubDate>Thu, 16 Mar 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Git shows everything as modified. Fix]]></title><description><![CDATA[<div class="paragraph">
 <p>If your repository and development machines use different OS and git or your IDE shows everything as modified. You probably have a line ending issue.</p>
 </div>
 <div class="paragraph">
@@ -66,7 +48,7 @@ autocrlf = false</pre>
 </div>
 <div class="paragraph">
 <p>The next time you pull it should work normally.</p>
-</div>]]></description><link>https://jsiu22.github.io/blog/2017/03/14/Git-shows-everything-as-modified.html</link><guid isPermaLink="true">https://jsiu22.github.io/blog/2017/03/14/Git-shows-everything-as-modified.html</guid><category><![CDATA[Git]]></category><category><![CDATA[ Linux]]></category><category><![CDATA[ Windows]]></category><category><![CDATA[ IDE]]></category><category><![CDATA[ Error]]></category><category><![CDATA[ Fix]]></category><category><![CDATA[ Development]]></category><dc:creator><![CDATA[Jax]]></dc:creator><pubDate>Tue, 14 Mar 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Linux Heredoc]]></title><description><![CDATA[<div class="paragraph">
+</div>]]></description><link>https://jsiu22.github.io/blog/2017/03/14/Git-shows-everything-as-modified-Fix.html</link><guid isPermaLink="true">https://jsiu22.github.io/blog/2017/03/14/Git-shows-everything-as-modified-Fix.html</guid><category><![CDATA[Git]]></category><category><![CDATA[ Linux]]></category><category><![CDATA[ Windows]]></category><category><![CDATA[ IDE]]></category><category><![CDATA[ Error]]></category><category><![CDATA[ Fix]]></category><category><![CDATA[ Development]]></category><dc:creator><![CDATA[Jax]]></dc:creator><pubDate>Tue, 14 Mar 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Linux Heredoc]]></title><description><![CDATA[<div class="paragraph">
 <p>Very handy tool, personally I like to use it to quickly make scripts, or populate files.</p>
 </div>
 <div class="listingblock">
@@ -95,4 +77,4 @@ EOF</code></pre>
 To fix this, go to your workspace&#8217;s .metadata (C:\Users\USERNAME\workspace\.metadata) and delete the .lock file.</p>
 </div>]]></description><link>https://jsiu22.github.io/blog/2017/02/28/Eclipse-Unable-to-acquire-the-state-change-lock-for-the-module.html</link><guid isPermaLink="true">https://jsiu22.github.io/blog/2017/02/28/Eclipse-Unable-to-acquire-the-state-change-lock-for-the-module.html</guid><category><![CDATA[Eclipse]]></category><category><![CDATA[ Error]]></category><category><![CDATA[ Development]]></category><category><![CDATA[ IDE]]></category><category><![CDATA[ Fix]]></category><dc:creator><![CDATA[Jax]]></dc:creator><pubDate>Tue, 28 Feb 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Hey this is my blog]]></title><description><![CDATA[<div class="paragraph">
 <p>This is my blog for various programming findings and will act as an archive for tips and tricks I find with technology.</p>
-</div>]]></description><link>https://jsiu22.github.io/blog/2017/02/14/Hey-this-is-my-blog.html</link><guid isPermaLink="true">https://jsiu22.github.io/blog/2017/02/14/Hey-this-is-my-blog.html</guid><dc:creator><![CDATA[Jax]]></dc:creator><pubDate>Tue, 14 Feb 2017 00:00:00 GMT</pubDate></item></channel></rss>
+</div>]]></description><link>https://jsiu22.github.io/blog/2017/02/14/Hey-this-is-my-blog.html</link><guid isPermaLink="true">https://jsiu22.github.io/blog/2017/02/14/Hey-this-is-my-blog.html</guid><dc:creator><![CDATA[Jax]]></dc:creator></item></channel></rss>
