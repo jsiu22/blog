@@ -2,7 +2,7 @@
 // See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
 // :hp-image: /covers/cover.png
 // :published_at: 2019-01-31
-:hp-tags: Linux, Bash, CLI
+//:hp-tags: Linux, Bash, CLI
 // :hp-alt-title: My English Title
 
 I had a bit of trouble finding the init system used for a Linux box I was using. Since the init process is always assigned PID 1, you can use the proc virtual file system to access the init used. 
