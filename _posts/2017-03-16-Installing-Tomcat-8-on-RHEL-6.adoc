@@ -45,19 +45,52 @@ sudo nano /etc/init/tomcat.conf
 tomcat.conf
 [source,bash]
 ----
-description "Apache Tomcat Web Application Container"
+description "Tomcat 8"
   start on runlevel [2345]
   stop on runlevel [!2345]
   respawn
   respawn limit 10 5
   
-  #Modify these based on your 
+  #Modify these based on your local configuration
   env JAVA_HOME=/where/your/jre/is/located
-  env CATALINA_HOME=/where/tomcat/is/installed
-  env CATALINA_BASE=/where/tomcat/is/installed
+  env CATALINA_HOME=/opt/tomcat
+  env CATALINA_BASE=/opt/tomcat
   env CATALINA_OPTS="-Xms512M -Xmx1024M -server -XX:+UseParallelGC"
   env JAVA_OPTS="-Djava.awt.headless=true -Djava.security.egd=file:/dev/./urandom"
 
   #We use this instead of setuid & setgid since RHEL6 uses an old version of Upstart
-  exec su -s /bin/sh -c 'exec "$0" "$@"' tomcat -- /where/tomcat/is/installed/bin/catalina.sh run
+  exec su -s /bin/sh -c 'exec "$0" "$@"' tomcat -- /opt/tomcat/bin/catalina.sh run
 ----
+
+`6.` Reload the conf and start Tomcat.
+....
+sudo initctl reload-configuration
+sudo initctl start tomcat
+	tomcat start/running, process 5155
+sudo initctl status tomcat
+	tomcat start/running, process 5155
+....
+
+You may also need to add port 8080 to your firewall.
+Check if your server is working correctly by entering the following URL (after substituting your IP):
+....
+http://<replace.with.server.IP>:8080
+....
+
+`7.` Configure user roles for the management interface.
+....
+sudo nano /opt/tomcat/conf/tomcat-users.xml
+....
+
+tomcat-users.xml
+[source,xml]
+----
+<tomcat-users ...>
+    <role rolename="manager-gui"/>
+    <role rolename="admin-gui"/>
+    <user username="tomcat" password="s3cret" roles="manager-gui,admin-gui"/>
+</tomcat-users>
+----
+
+Theres other stuff in their, so just add the middle 2 lines in the appropriate place.
+
