@@ -37,7 +37,27 @@ sudo chmod g+rwx bin
 sudo chmod g+r bin/*
 ....
 
-`5.` Setup a Systemd for Tomcat.
+`5.` Setup a Upstart config for Tomcat.
 ....
-sudo nano /etc/systemd/system/tomcat.service
+sudo nano /etc/init/tomcat.conf
 ....
+
+[source,bash]
+tomact.conf
+----
+description "Apache Tomcat Web Application Container"
+  start on runlevel [2345]
+  stop on runlevel [!2345]
+  respawn
+  respawn limit 10 5
+  
+  #Modify these based on your 
+  env JAVA_HOME=/where/your/jre/is/located
+  env CATALINA_HOME=/where/tomcat/is/installed
+  env CATALINA_BASE=/where/tomcat/is/installed
+  env CATALINA_OPTS="-Xms512M -Xmx1024M -server -XX:+UseParallelGC"
+  env JAVA_OPTS="-Djava.awt.headless=true -Djava.security.egd=file:/dev/./urandom"
+  
+  #We use this instead of setuid & setgid since RHEL6 uses an old version of Upstart
+  exec su -s /bin/sh -c 'exec "$0" "$@"' tomcat -- /where/tomcat/is/installed/bin/catalina.sh run
+----
