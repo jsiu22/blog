@@ -42,8 +42,8 @@ sudo chmod g+r bin/*
 sudo nano /etc/init/tomcat.conf
 ....
 
+tomcat.conf
 [source,bash]
-tomact.conf
 ----
 description "Apache Tomcat Web Application Container"
   start on runlevel [2345]
@@ -57,7 +57,7 @@ description "Apache Tomcat Web Application Container"
   env CATALINA_BASE=/where/tomcat/is/installed
   env CATALINA_OPTS="-Xms512M -Xmx1024M -server -XX:+UseParallelGC"
   env JAVA_OPTS="-Djava.awt.headless=true -Djava.security.egd=file:/dev/./urandom"
-  
+
   #We use this instead of setuid & setgid since RHEL6 uses an old version of Upstart
   exec su -s /bin/sh -c 'exec "$0" "$@"' tomcat -- /where/tomcat/is/installed/bin/catalina.sh run
 ----
