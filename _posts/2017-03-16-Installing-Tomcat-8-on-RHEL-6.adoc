@@ -94,3 +94,9 @@ tomcat-users.xml
 
 Theres other stuff in their, so just add the middle 2 lines in the appropriate place.
 
+*Note: If you get an error uploading your WAR files, you may need to do the following again:
+....
+cd /opt/tomcat
+sudo chown -R tomcat logs/ temp/ webapps/ work/
+....
+
