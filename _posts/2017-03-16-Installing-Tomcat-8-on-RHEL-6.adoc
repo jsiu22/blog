@@ -94,6 +94,12 @@ tomcat-users.xml
 
 Theres other stuff in there, so just add the middle 2 lines in the appropriate place.
 
+`8.` Restart Tomcat.
+....
+sudo initctl restart tomcat
+	tomcat start/running, process 5154
+....
+
 *Note: If you get an error uploading your WAR files, you may need to do the following again:
 ....
 cd /opt/tomcat
