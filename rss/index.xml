@@ -1,4 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jax's blog]]></title><description><![CDATA[A journey in The Art of Technomancy.]]></description><link>https://jsiu22.github.io/blog</link><image><url>https://jsiu22.github.io//img/intro-bg.jpg</url><title>Jax&apos;s blog</title><link>https://jsiu22.github.io/blog</link></image><generator>RSS for Node</generator><lastBuildDate>Thu, 16 Mar 2017 14:48:03 GMT</lastBuildDate><atom:link href="https://jsiu22.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[What init system am I using?]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jax's blog]]></title><description><![CDATA[A journey in The Art of Technomancy.]]></description><link>https://jsiu22.github.io/blog</link><image><url>https://jsiu22.github.io//img/intro-bg.jpg</url><title>Jax&apos;s blog</title><link>https://jsiu22.github.io/blog</link></image><generator>RSS for Node</generator><lastBuildDate>Fri, 31 Mar 2017 18:14:21 GMT</lastBuildDate><atom:link href="https://jsiu22.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Linux kill process by user & executable]]></title><description><![CDATA[<div class="paragraph">
+<p>Sometimes I find myself spawning a lot of identical processes by mistake.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>pkill -u user -f cmd_or_process_name</pre>
+</div>
+</div>]]></description><link>https://jsiu22.github.io/blog/2017/03/31/Linux-kill-process-by-user-executable.html</link><guid isPermaLink="true">https://jsiu22.github.io/blog/2017/03/31/Linux-kill-process-by-user-executable.html</guid><category><![CDATA[Linux]]></category><category><![CDATA[ CLI]]></category><dc:creator><![CDATA[Jax]]></dc:creator><pubDate>Fri, 31 Mar 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[What init system am I using?]]></title><description><![CDATA[<div class="paragraph">
 <p>I had a bit of trouble finding the init system used for a Linux box I was using. Since the init process is always assigned PID 1, you can use the proc virtual file system to access the init used.</p>
 </div>
 <div class="literalblock">
