@@ -1,0 +1,12 @@
+= Linux kill process by user & executable
+// See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
+// :hp-image: /covers/cover.png
+// :published_at: 2019-01-31
+:hp-tags: Linux, CLI
+// :hp-alt-title: My English Title
+
+Sometimes I find myself spawning a lot of identical processes by mistake.
+
+----
+pkill -u user -f cmd_or_process_name
+----
