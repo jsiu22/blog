@@ -16,5 +16,21 @@
   },
   "theme": {
     "name": "casper"
+  },
+  "urls": {
+    "site": "https://jsiu22.github.io/blog",
+    "hubpress": "https://jsiu22.github.io/blog",
+    "theme": "//jsiu22.github.io/blog/themes/casper",
+    "images": "https://jsiu22.github.io/blog/images"
+  },
+  "initialisationConfigComponent": {
+    "name": "initialise-configuration",
+    "computed": {},
+    "methods": {},
+    "staticRenderFns": [
+      null,
+      null,
+      null
+    ]
   }
 }
