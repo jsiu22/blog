@@ -50,7 +50,7 @@ EOF
 # $json
 ....
 
-`5.` Show response and close connection.
+`5.` Show response and close descriptor (3).
 ....
  cat <&3
  exec 3<&-
