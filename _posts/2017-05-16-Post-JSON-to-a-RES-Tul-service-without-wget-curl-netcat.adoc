@@ -2,10 +2,15 @@
 // See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
 // :hp-image: /covers/cover.png
 // :published_at: 2019-01-31
-:hp-tags: Linux, Unix, REST
+:hp-tags: Linux, Unix, REST, CLI, BASH
 // :hp-alt-title: My English Title
 
-1. Construct your JSON variable.
+If your REST URL looks like this:
+....
+ http://some.server:8080/URI/TO/RESTful/API
+....
+
+`1.` Construct your JSON variable.
 ....
 #No indentations otherwise heredoc may break.
 json=$(cat <<EOF
@@ -18,18 +23,18 @@ EOF
 )
 ....
 
-2. Calculate Content-Length.
+`2.` Calculate Content-Length.
 ....
  len=${#json}
 ....
 
-3. Open TCP socket using descriptor (3).
+`3.` Open TCP socket using descriptor (3).
 ....
 #exec 3<>/dev/tcp/SERVER/PORT
  exec 3<>/dev/tcp/some.server/8080
 ....
 
-4. ECHO spoofed header to descriptor (3).
+`4.` ECHO spoofed header to descriptor (3).
 ....
 #This must be on 1 line.
  echo -e "POST /URI/TO/RESTful/API HTTP/1.1\r\nHost: some.server\r\nContent-type: application/json\r\nContent-length: $len\r\nConnection: close \r\n\r\n$json">&3
@@ -45,7 +50,7 @@ EOF
 # $json
 ....
 
-5. Show response and close connection.
+`5.` Show response and close connection.
 ....
  cat <&3
  exec 3<&-
