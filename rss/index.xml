@@ -1,4 +1,73 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jax's blog]]></title><description><![CDATA[A journey in The Art of Technomancy.]]></description><link>https://jsiu22.github.io/blog</link><image><url>https://jsiu22.github.io//img/intro-bg.jpg</url><title>Jax&apos;s blog</title><link>https://jsiu22.github.io/blog</link></image><generator>RSS for Node</generator><lastBuildDate>Fri, 31 Mar 2017 18:14:21 GMT</lastBuildDate><atom:link href="https://jsiu22.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Linux kill process by user & executable]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jax's blog]]></title><description><![CDATA[A journey in The Art of Technomancy.]]></description><link>https://jsiu22.github.io/blog</link><image><url>https://jsiu22.github.io//img/intro-bg.jpg</url><title>Jax&apos;s blog</title><link>https://jsiu22.github.io/blog</link></image><generator>RSS for Node</generator><lastBuildDate>Tue, 16 May 2017 20:12:23 GMT</lastBuildDate><atom:link href="https://jsiu22.github.io/blog/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Post JSON to a RESTful service without wget, curl, netcat.]]></title><description><![CDATA[<div class="paragraph">
+<p>If your REST URL looks like this:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre> http://some.server:8080/URI/TO/RESTful/API</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>1.</code> Construct your JSON variable.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>#No indentations otherwise heredoc may break.
+json=$(cat &lt;&lt;EOF
+{
+       "personID": $personID,
+       "firstname": "$firstname",
+       "lastname": "$lastname"
+}
+EOF
+)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>2.</code> Calculate Content-Length.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre> len=${#json}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>3.</code> Open TCP socket using descriptor (3).</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>#exec 3&lt;&gt;/dev/tcp/SERVER/PORT
+ exec 3&lt;&gt;/dev/tcp/some.server/8080</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>4.</code> ECHO spoofed header to descriptor (3).</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>#This must be on 1 line.
+ echo -e "POST /URI/TO/RESTful/API HTTP/1.1\r\nHost: some.server\r\nContent-type: application/json\r\nContent-length: $len\r\nConnection: close \r\n\r\n$json"&gt;&amp;3</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre># Breaking down the header
+# POST /URI/TO/RESTful/API HTTP/1.1\r\n
+# Host: some.server\r\n
+# Content-type: application/json\r\n
+# Content-length: $len\r\n
+# Connection: close \r\n\r\n
+# $json</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>5.</code> Show response and close connection.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre> cat &lt;&amp;3
+ exec 3&lt;&amp;-</pre>
+</div>
+</div>]]></description><link>https://jsiu22.github.io/blog/2017/05/16/Post-JSON-to-a-RES-Tul-service-without-wget-curl-netcat.html</link><guid isPermaLink="true">https://jsiu22.github.io/blog/2017/05/16/Post-JSON-to-a-RES-Tul-service-without-wget-curl-netcat.html</guid><category><![CDATA[Linux]]></category><category><![CDATA[Unix]]></category><category><![CDATA[REST]]></category><category><![CDATA[CLI]]></category><category><![CDATA[BASH]]></category><dc:creator><![CDATA[Jax]]></dc:creator><pubDate>Tue, 16 May 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Linux kill process by user & executable]]></title><description><![CDATA[<div class="paragraph">
 <p>Sometimes I find myself spawning a lot of identical processes by mistake.</p>
 </div>
 <div class="listingblock">
