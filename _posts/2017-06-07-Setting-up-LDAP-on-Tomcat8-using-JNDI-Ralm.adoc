@@ -1,0 +1,44 @@
+= Setting up LDAP on Tomcat8 using JNDIRealm
+// See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
+// :hp-image: /covers/cover.png
+// :published_at: 2019-01-31
+:hp-tags: Tomcat, LDAP, XML, JSP
+// :hp-alt-title: My English Title
+
+This method uses only XML, to setup a JNDIRealm (LDAP) which is used to authenticate the user. We will put the Realm in the context.xml to keep everything contained for this app. You can access the username via the session variables. 
+
+1. Make a context.xml file in WebContent/META-INF/context.xml then put in the following. (Substitute your own LDAP details.)
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<WatchedResource>WEB-INF/web.xml</WatchedResource>
+	<Realm className="org.apache.catalina.realm.JNDIRealm"
+    		connectionURL="ldap://localhost:389"
+  		userPattern="uid={0},ou=people,dc=mycompany,dc=com"
+      		roleBase="ou=groups,dc=mycompany,dc=com"
+      		roleName="cn"
+        	roleSearch="(uniqueMember={0})"
+	/>
+</Context>
+----
+
+2. Add into your web.xml (WebContent/WEB-INF/web.xml) inside <web-app></web-app>
+----
+<security-constraint>
+	<web-resource-collection>
+		<web-resource-name>Some resource</web-resource-name>
+		<url-pattern>/*</url-pattern>
+		<http-method>GET</http-method>
+		<http-method>POST</http-method>
+	</web-resource-collection>
+
+	<auth-constraint>
+		<role-name>*</role-name>
+	</auth-constraint>
+
+<!-- transport-guarantee can be CONFIDENTIAL, INTEGRAL, or NONE -->
+	<user-data-constraint>
+		<transport-guarantee>CONFIDENTIAL</transport-guarantee>
+	</user-data-constraint>
+</security-constraint>
+----
